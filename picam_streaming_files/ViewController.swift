@@ -21,10 +21,10 @@ class ViewController: UIViewController {
         let frame = CGRectMake(0, 150, 640, 480)
         imageView!.frame = frame
         self.view.addSubview(imageView!)
-        self.imageStream.delegate = self
     }
     
-    @IBAction func startStream(sender: UIButton) {
+    @IBAction func connectButton(sender: UIButton){
+        self.imageStream.delegate = self
         self.imageStream.streamConnect()
     }
     
