@@ -18,22 +18,96 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqA-ku-PZc">
-                                <rect key="frame" x="277" y="75" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="257" y="75" width="87" height="30"/>
+                                <state key="normal" title="Start Stream"/>
                                 <connections>
                                     <action selector="startStream:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="eEZ-Om-TSQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vI-pL-mpQ">
+                                <rect key="frame" x="284" y="437" width="32" height="32"/>
+                                <state key="normal" image="button_dir_up_0"/>
+                                <connections>
+                                    <action selector="tiltUp:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="Bou-s4-sGL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2f-Fp-ZKR">
+                                <rect key="frame" x="284" y="539" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="UNp-kF-Y6c"/>
+                                </constraints>
+                                <state key="normal" image="button_dir_down_0"/>
+                                <connections>
+                                    <action selector="tiltDown:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="9Sx-gb-wCN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5o-vl-DNX">
+                                <rect key="frame" x="280" y="484" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0x6-1z-QEp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="B9R-bu-v30"/>
+                                    <constraint firstAttribute="height" constant="40" id="gDD-Op-SJk"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xZh-Sl-Mxm"/>
+                                </constraints>
+                                <state key="normal" title="Snap" image="icon-camera-128"/>
+                                <connections>
+                                    <action selector="snap:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="5x3-VP-Mc8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWZ-e6-gZJ">
+                                <rect key="frame" x="355" y="488" width="35" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Q5m-ta-1DF"/>
+                                </constraints>
+                                <state key="normal" image="button_dir_right_0"/>
+                                <connections>
+                                    <action selector="panRight:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="9ex-i4-N5W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od2-FW-QfI">
+                                <rect key="frame" x="213" y="488" width="32" height="32"/>
+                                <state key="normal" image="button_dir_left_0"/>
+                                <connections>
+                                    <action selector="panLeft:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="7AG-n3-kn9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTC-YL-6j2">
+                                <rect key="frame" x="277" y="392" width="47" height="30"/>
+                                <state key="normal" title="Center"/>
+                                <connections>
+                                    <action selector="centerCam:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="2vE-OK-9up"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="T2f-Fp-ZKR" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="1g9-u5-Ter"/>
+                            <constraint firstItem="T2f-Fp-ZKR" firstAttribute="top" secondItem="j5o-vl-DNX" secondAttribute="bottom" constant="15" id="2dZ-4a-uN3"/>
+                            <constraint firstItem="qWZ-e6-gZJ" firstAttribute="leading" secondItem="j5o-vl-DNX" secondAttribute="trailing" constant="35" id="394-r8-FWb"/>
+                            <constraint firstItem="81p-1G-U0D" firstAttribute="top" secondItem="T2f-Fp-ZKR" secondAttribute="bottom" constant="29" id="3EE-V9-pgb"/>
                             <constraint firstItem="GqA-ku-PZc" firstAttribute="top" secondItem="pmr-Dl-HUr" secondAttribute="bottom" constant="55" id="5zR-r1-NmW"/>
+                            <constraint firstItem="j5o-vl-DNX" firstAttribute="top" secondItem="7vI-pL-mpQ" secondAttribute="bottom" constant="15" id="Hpl-DC-tiN"/>
+                            <constraint firstItem="7vI-pL-mpQ" firstAttribute="top" secondItem="zTC-YL-6j2" secondAttribute="bottom" constant="15" id="Hw4-Nw-BeM"/>
                             <constraint firstItem="GqA-ku-PZc" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="PFE-cR-kkX"/>
+                            <constraint firstItem="7vI-pL-mpQ" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="XEq-26-v8K"/>
+                            <constraint firstItem="zTC-YL-6j2" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="ZJT-a5-9KV"/>
+                            <constraint firstItem="j5o-vl-DNX" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="mLq-5h-tOx"/>
+                            <constraint firstItem="j5o-vl-DNX" firstAttribute="centerY" secondItem="Od2-FW-QfI" secondAttribute="centerY" id="roy-DI-cnQ"/>
+                            <constraint firstItem="j5o-vl-DNX" firstAttribute="leading" secondItem="Od2-FW-QfI" secondAttribute="trailing" constant="35" id="xVK-Yx-j4I"/>
+                            <constraint firstItem="j5o-vl-DNX" firstAttribute="centerY" secondItem="qWZ-e6-gZJ" secondAttribute="centerY" id="zli-o7-gRe"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9P-Qg-KdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="660" y="490"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_dir_down_0" width="32" height="32"/>
+        <image name="button_dir_left_0" width="32" height="32"/>
+        <image name="button_dir_right_0" width="32" height="32"/>
+        <image name="button_dir_up_0" width="32" height="32"/>
+        <image name="icon-camera-128" width="128" height="128"/>
+    </resources>
 </document>

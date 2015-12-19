@@ -29,66 +29,18 @@ class ImageStream: NSObject {
         dispatch_async(queue) {
         NSStream.getStreamsToHostWithName(self.addr, port: self.port, inputStream: &self.inp, outputStream: &self.out)
             self.inp!.delegate = self
-            self.inp!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            self.inp!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode) // what would happen if commented out?
             self.inp!.open()
             self.out!.open()
             
             NSRunLoop.currentRunLoop().run()
         }
-    }
-    
-//    func readStream() -> NSData {
-    
-        
-
-        
-        //      inputStream.delegate = self
-        //      let outputStream = out!
-
-        
-        //      outputStream.open()
-        //      var buffer: [UInt8] = [103, 101, 116] //"get" in ASCII
-        //      outputStream.write(&buffer, maxLength: buffer.count)
-        
-        //      let bufferSize = 1024000
-        //      var inputBuffer = Array<UInt8>(count:bufferSize, repeatedValue: 0)
-        //      let bytesRead = inputStream.read(&inputBuffer, maxLength: bufferSize)
-        
-
-        /*
-        var bytesRead = UInt32(inputStream.read(&inputLength, maxLength: 4 ) )
-        print(bytesRead)
-        imageLength = UnsafePointer<UInt32>(inputLength).memory
-        print(imageLength)
-        print("image length")
-        
-        var readIndex : UInt32 = 0
-        var readBytes = readSize
-        
-            while (readIndex < imageLength) {
-        
-                if ((readIndex + readSize ) > imageLength) {
-                readBytes = imageLength - readIndex
-                }
-                
-                bytesRead = UInt32(inputStream.read(&inputBuffer[Int(readIndex)], maxLength: Int(readBytes) ) )
-                
-                readIndex = readIndex + bytesRead
-            }
-        
-        
-        let pictureData = NSData(bytes: inputBuffer, length: Int(imageLength))
-
-        return pictureData
 
     }
-        */
-        
-//        return NSData() //FIXME: we will want to change this function to have no return type
-//    }
- 
-    
+
 }
+
+//self.out!.write(&buffer, maxLength: buffer.count)
 
 extension ImageStream : NSStreamDelegate {
     
@@ -100,7 +52,7 @@ extension ImageStream : NSStreamDelegate {
             NSLog("Stream opened")
             break
         case NSStreamEvent.HasBytesAvailable:
-            NSLog("HasBytesAvailable")
+//            NSLog("HasBytesAvailable")
       
                 if let imageStream = aStream as? NSInputStream {
                     var inputLength = Array<UInt8>(count:4, repeatedValue: 0)
@@ -125,11 +77,11 @@ extension ImageStream : NSStreamDelegate {
                         totalLengthBytesRead = totalLengthBytesRead + bytesRead
                     }
 
-                    print(totalLengthBytesRead)
+//                    print(totalLengthBytesRead)
                     imageLength = UnsafePointer<UInt32>(inputLength).memory
                     
-                    print(imageLength)
-                    print("image length")
+//                    print(imageLength)
+//                    print("image length")
                     
 
                     var readIndex : UInt32 = 0
@@ -166,7 +118,7 @@ extension ImageStream : NSStreamDelegate {
             NSLog("Unknown.")
         }
         
-        print("received callback!!!!")
+//        print("received callback!!!!")
 
     }
 }
