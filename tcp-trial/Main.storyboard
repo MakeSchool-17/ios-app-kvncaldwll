@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqA-ku-PZc">
-                                <rect key="frame" x="257" y="75" width="87" height="30"/>
-                                <state key="normal" title="Start Stream"/>
+                                <rect key="frame" x="271" y="75" width="59" height="30"/>
+                                <state key="normal" title="Connect"/>
                                 <connections>
                                     <action selector="startStream:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="eEZ-Om-TSQ"/>
                                 </connections>

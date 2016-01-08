@@ -40,8 +40,6 @@ class ImageStream: NSObject {
 
 }
 
-//self.out!.write(&buffer, maxLength: buffer.count)
-
 extension ImageStream : NSStreamDelegate {
     
     internal func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
@@ -52,7 +50,6 @@ extension ImageStream : NSStreamDelegate {
             NSLog("Stream opened")
             break
         case NSStreamEvent.HasBytesAvailable:
-//            NSLog("HasBytesAvailable")
       
                 if let imageStream = aStream as? NSInputStream {
                     var inputLength = Array<UInt8>(count:4, repeatedValue: 0)
@@ -77,12 +74,7 @@ extension ImageStream : NSStreamDelegate {
                         totalLengthBytesRead = totalLengthBytesRead + bytesRead
                     }
 
-//                    print(totalLengthBytesRead)
                     imageLength = UnsafePointer<UInt32>(inputLength).memory
-                    
-//                    print(imageLength)
-//                    print("image length")
-                    
 
                     var readIndex : UInt32 = 0
                     var readBytes = self.readSize
@@ -117,8 +109,6 @@ extension ImageStream : NSStreamDelegate {
         default:
             NSLog("Unknown.")
         }
-        
-//        print("received callback!!!!")
 
     }
 }
