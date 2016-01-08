@@ -21,6 +21,8 @@ class ImageStream: NSObject {
     var inp: NSInputStream?
     var out: NSOutputStream?
     
+    var controllerStream = ControllerStream()
+    
     let bufferSize : UInt32 = 1000000
     let readSize : UInt32 = 4096
     
@@ -29,6 +31,10 @@ class ImageStream: NSObject {
         dispatch_async(queue) {
         NSStream.getStreamsToHostWithName(self.addr, port: self.port, inputStream: &self.inp, outputStream: &self.out)
             self.inp!.delegate = self
+            self.out!.delegate = self.controllerStream
+            
+            self.controllerStream.out = self.out
+            
             self.inp!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode) // what would happen if commented out?
             self.inp!.open()
             self.out!.open()
@@ -109,6 +115,6 @@ extension ImageStream : NSStreamDelegate {
         default:
             NSLog("Unknown.")
         }
-
+5
     }
 }
