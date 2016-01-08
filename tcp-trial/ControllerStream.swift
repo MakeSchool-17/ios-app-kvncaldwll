@@ -13,6 +13,15 @@ import UIKit
 class ControllerStream: NSObject {
     
     var out: NSOutputStream?
+    var accelMotion = MotionControls()
+    
+    override init () {
+        
+        super.init()
+        accelMotion.startMotionCapture()
+        // implement stop motion updates
+        
+    }
     
 }
 

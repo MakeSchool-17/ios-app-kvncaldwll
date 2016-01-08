@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F040A2151C4073D500195521 /* ControllerStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040A2141C4073D500195521 /* ControllerStream.swift */; };
+		F040A2191C40788000195521 /* MotionControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040A2181C40788000195521 /* MotionControls.swift */; };
+		F040A21B1C4078B300195521 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F040A21A1C4078B300195521 /* CoreMotion.framework */; };
+		F040A21E1C407AA000195521 /* MotionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040A21D1C407AA000195521 /* MotionKit.swift */; };
 		F04F45B81C1108CE005F0501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F45B71C1108CE005F0501 /* AppDelegate.swift */; };
 		F04F45BA1C1108CE005F0501 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F45B91C1108CE005F0501 /* ViewController.swift */; };
 		F04F45BF1C1108CE005F0501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04F45BE1C1108CE005F0501 /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		F040A2141C4073D500195521 /* ControllerStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerStream.swift; sourceTree = "<group>"; };
+		F040A2181C40788000195521 /* MotionControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionControls.swift; sourceTree = "<group>"; };
+		F040A21A1C4078B300195521 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		F040A21D1C407AA000195521 /* MotionKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionKit.swift; sourceTree = "<group>"; };
 		F04F45B41C1108CE005F0501 /* tcp-trial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tcp-trial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04F45B71C1108CE005F0501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F04F45B91C1108CE005F0501 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,12 +39,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F040A21B1C4078B300195521 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F040A21C1C4078C000195521 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F040A21A1C4078B300195521 /* CoreMotion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F04F45AB1C1108CE005F0501 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +73,7 @@
 		F04F45B61C1108CE005F0501 /* tcp-trial */ = {
 			isa = PBXGroup;
 			children = (
+				F040A21C1C4078C000195521 /* Frameworks */,
 				F04F45B71C1108CE005F0501 /* AppDelegate.swift */,
 				F04F45B91C1108CE005F0501 /* ViewController.swift */,
 				F04F45BE1C1108CE005F0501 /* Assets.xcassets */,
@@ -66,6 +82,8 @@
 				F04F45C31C1108CE005F0501 /* Info.plist */,
 				F05C8CFB1C1A53EE0028EB41 /* ImageStream.swift */,
 				F040A2141C4073D500195521 /* ControllerStream.swift */,
+				F040A2181C40788000195521 /* MotionControls.swift */,
+				F040A21D1C407AA000195521 /* MotionKit.swift */,
 			);
 			path = "tcp-trial";
 			sourceTree = "<group>";
@@ -142,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F040A2191C40788000195521 /* MotionControls.swift in Sources */,
 				F04F45BA1C1108CE005F0501 /* ViewController.swift in Sources */,
+				F040A21E1C407AA000195521 /* MotionKit.swift in Sources */,
 				F040A2151C4073D500195521 /* ControllerStream.swift in Sources */,
 				F04F45B81C1108CE005F0501 /* AppDelegate.swift in Sources */,
 				F05C8CFC1C1A53EE0028EB41 /* ImageStream.swift in Sources */,
