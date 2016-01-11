@@ -40,7 +40,10 @@ extension ControllerStream : NSStreamDelegate {
             case NSStreamEvent.HasBytesAvailable:
                 NSLog("Controller Bytes Available")
                 
-                
+                if let imageStream = aStream as? NSOutputStream {
+                 
+                    
+                }
                 
                 break
             
