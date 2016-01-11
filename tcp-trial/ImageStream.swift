@@ -35,7 +35,9 @@ class ImageStream: NSObject {
             
             self.controllerStream.out = self.out
             
-            self.inp!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode) // what would happen if commented out?
+            self.inp!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            self.out!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            
             self.inp!.open()
             self.out!.open()
             

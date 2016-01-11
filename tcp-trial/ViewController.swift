@@ -11,22 +11,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var imageView: UIImageView?
     var imageStream = ImageStream()
+    var viewStream = ViewStreamViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        imageView = UIImageView()
-        let frame = CGRectMake(30, 150, 320, 240)
-        imageView!.frame = frame
-        self.view.addSubview(imageView!)
-        self.imageStream.delegate = self
+
     }
     
     
     @IBAction func startStream(sender: UIButton) {
         self.imageStream.streamConnect()
+        self.viewStream.imageDataRecieved()
     }
     
     var pan: Int = 90
@@ -82,13 +78,5 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-extension ViewController: ImageStreamDataDelegate {
-    
-    func imageDataRecieved(image: NSData) {
-        let image: UIImage = UIImage(data: image)!
-        imageView!.image = image
     }
 }

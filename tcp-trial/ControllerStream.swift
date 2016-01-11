@@ -16,9 +16,9 @@ class ControllerStream: NSObject {
     var accelMotion = MotionControls()
     
     override init () {
-        
         super.init()
         accelMotion.startMotionCapture()
+        
         // implement stop motion updates
         
     }
@@ -33,17 +33,20 @@ extension ControllerStream : NSStreamDelegate {
         switch (eventCode){
             
             case NSStreamEvent.OpenCompleted:
-                NSLog("Controller stream opened")
+                NSLog("Controller Stream Opened")
                 break
             case NSStreamEvent.HasBytesAvailable:
-                NSLog("Controller bytes available")
+                NSLog("Controller Bytes Available")
+                
+                
+                
                 break
             case NSStreamEvent.ErrorOccurred:
-                NSLog("Controller ErrorOccurred")
+                NSLog("Controller Error Occurred")
                 print(aStream.streamError)
                 break
             case NSStreamEvent.EndEncountered:
-                NSLog("Controller EndEncountered")
+                NSLog("Controller End Encountered")
                 break
             default:
                 NSLog("Controller Error Unknown.")
