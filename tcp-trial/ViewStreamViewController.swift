@@ -20,12 +20,8 @@ class ViewStreamViewController: UIViewController {
         
         let value = UIInterfaceOrientation.LandscapeLeft.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
-        
-        imageView = UIImageView()
-        let frame = CGRectMake(30, 150, 320, 240)
-        imageView!.frame = frame
-        self.view.addSubview(imageView!)
-        self.imageStream.delegate = self
+
+        imageStream.delegate = self
         
     }
     
