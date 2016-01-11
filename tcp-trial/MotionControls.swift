@@ -13,21 +13,33 @@ class MotionControls: NSObject {
     var motionKit = MotionKit()
     
     override init() {
+        
         super.init()
         motionKit.delegate = self
+        
     }
     
     func startMotionCapture () {
-        motionKit.getAccelerometerValues(1, values: nil)
+        
+        if motionKit.manager.accelerometerAvailable {
+            
+            motionKit.getAccelerometerValues(1, values: nil)
+            
+        }
+        
     }
+    
 }
 
 
 extension MotionControls: MotionKitDelegate {
     
     func retrieveAccelerometerValues (x: Double, y:Double, z:Double, absoluteValue: Double) {
+        
             print("x: \(x)")
             print("y: \(y)")
             print("z: \(z)")
+        
     }
+    
 }
