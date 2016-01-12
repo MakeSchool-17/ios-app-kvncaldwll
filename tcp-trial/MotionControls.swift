@@ -18,8 +18,12 @@ class MotionControls: NSObject {
     }
     
     func startMotionCapture () {
-        if motionKit.manager.accelerometerAvailable {
-            motionKit.getAccelerometerValues(1, values: nil)
+        if motionKit.manager.gyroAvailable {
+            motionKit.getGyroValues(1, values: nil)
+        }
+        
+        if motionKit.manager.deviceMotionAvailable {
+            motionKit.getRotationRateFromDeviceMotion(1, values: nil)
         }
     }
     
@@ -28,10 +32,19 @@ class MotionControls: NSObject {
 
 extension MotionControls: MotionKitDelegate {
     
-    func retrieveAccelerometerValues (x: Double, y:Double, z:Double, absoluteValue: Double) {
-            print("x: \(x)")
-            print("y: \(y)")
-            print("z: \(z)")
+    func retrieveGyroscopeValues(x: Double, y:Double, z:Double, absoluteValue: Double) {
+        print("gyro x: \(x)")
+        print("gyro y: \(y)")
+        print("gyro z: \(z)")
+        print("gyro absolute value: \(absoluteValue)")
+    }
+    
+    func getRotationRateFromDeviceMotion(x: Double, y:Double, z:Double) {
+        print("rotation rate x: \(x)")
+        print("rotation rate y: \(y)")
+        print("rotation rate z: \(z)")
+        print("_____________________")
+
     }
     
 }
