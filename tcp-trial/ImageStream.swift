@@ -9,7 +9,7 @@
 import UIKit
 
 
-public protocol ImageStreamDataDelegate {
+public protocol ImageStreamDataDelegate: class {
     
     func imageDataRecieved(image:NSData)
     
@@ -20,7 +20,6 @@ class ImageStream: NSObject {
     
     var delegate: ImageStreamDataDelegate?
     var controllerStream = ControllerStream()
-    var viewStream = ViewStreamViewController()
     
     let addr = "172.30.7.238"
     let port = 8000
@@ -40,7 +39,7 @@ class ImageStream: NSObject {
             self.inp!.delegate = self
             self.out!.delegate = self.controllerStream
             
-            self.out = self.controllerStream.out
+            self.controllerStream.out = self.out
             
             self.inp!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             
@@ -63,6 +62,7 @@ extension ImageStream : NSStreamDelegate {
         case NSStreamEvent.OpenCompleted:
             NSLog("Stream opened")
             break
+            
         case NSStreamEvent.HasBytesAvailable:
       
                 if let imageStream = aStream as? NSInputStream {
@@ -78,19 +78,13 @@ extension ImageStream : NSStreamDelegate {
                     var totalLengthBytesRead : UInt32 = 0
                     
                     while (readLengthIndex < 4) {
-                        
                         if (readLengthIndex > 0) {
-                            
                             readLengthBytes = 4 - readLengthIndex
-                            
                         }
                         
                         bytesRead = UInt32(imageStream.read(&inputLength[Int(readLengthIndex)], maxLength: Int(readLengthBytes) ) )
-                        
                         readLengthIndex = readLengthIndex + bytesRead
-                        
                         totalLengthBytesRead = totalLengthBytesRead + bytesRead
-                        
                     }
 
                     imageLength = UnsafePointer<UInt32>(inputLength).memory
@@ -99,36 +93,27 @@ extension ImageStream : NSStreamDelegate {
                     var readBytes = self.readSize
                     
                     while (readIndex < imageLength) {
-                        
                         if ((readIndex + self.readSize ) > imageLength) {
-                            
                             readBytes = imageLength - readIndex
-                            
                         }
                         
                         bytesRead = UInt32(imageStream.read(&inputBuffer[Int(readIndex)], maxLength: Int(readBytes) ) )
-                        
                         readIndex = readIndex + bytesRead
-                        
                     }
                     
                     let pictureData = NSData(bytes: inputBuffer, length: Int(imageLength))
                     
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        
                         if (self.delegate != nil) {
-
-                            self.viewStream.imageDataRecieved(pictureData)
-                            
+                            self.delegate?.imageDataRecieved(pictureData)
                         }
-                        
                     })
-                    
                 }
+                
             break
             
         case NSStreamEvent.ErrorOccurred:
-            NSLog("ErrorOccurred")
+            NSLog("ErrorOccurred shit")
             print(aStream.streamError)
             break
             

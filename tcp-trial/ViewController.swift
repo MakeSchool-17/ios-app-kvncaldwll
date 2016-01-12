@@ -12,25 +12,23 @@ import UIKit
 class ViewController: UIViewController {
     
     var imageStream = ImageStream()
-    var viewStream = ViewStreamViewController()
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
+        
     }
     
     
     @IBAction func startStream(sender: UIButton) {
-        
-        self.imageStream.streamConnect()
+        imageStream.streamConnect()
         
     }
 
-    override func didReceiveMemoryWarning() {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        guard let viewStreamViewController = segue.destinationViewController as? ViewStreamViewController else { return }
+        viewStreamViewController.imageStream = self.imageStream
         
     }
+    
 }

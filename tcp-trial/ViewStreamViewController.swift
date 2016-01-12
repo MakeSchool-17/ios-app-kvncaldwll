@@ -11,24 +11,20 @@ import UIKit
 
 class ViewStreamViewController: UIViewController {
     
-    var imageView: UIImageView?
-    var imageStream = ImageStream()
-
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
-
-        imageStream.delegate = self
-        
-    }
+    var imageStream: ImageStream?
     
-    override func shouldAutorotate() -> Bool {
+    var newStreamView = UIImageView()
+    var screenSize: CGRect = UIScreen.mainScreen().bounds
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let imageStream = self.imageStream {
+            imageStream.delegate = self
+        }
         
-        return true
-        
+        self.view.addSubview(self.newStreamView)
+        self.newStreamView.frame = CGRectMake(0, 0, screenSize.width, screenSize.height)
     }
     
     @IBAction func disconnectButton(sender: AnyObject) {
@@ -45,10 +41,9 @@ class ViewStreamViewController: UIViewController {
 extension ViewStreamViewController: ImageStreamDataDelegate {
     
     func imageDataRecieved(image: NSData) {
-        
         let image: UIImage = UIImage(data: image)!
-        imageView!.image = image
-        
+        //self.streamView.image = image
+        self.newStreamView.image = image
     }
     
 }
