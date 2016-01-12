@@ -13,18 +13,26 @@ class ViewStreamViewController: UIViewController {
     
     var imageStream: ImageStream?
     
-    var newStreamView = UIImageView()
-    var screenSize: CGRect = UIScreen.mainScreen().bounds
+    
+    @IBOutlet weak var viewStream: UIImageView!
+    
+//    var newStreamView = UIImageView()
+//    var screenSize: CGRect = UIScreen.mainScreen().bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let imageStream = self.imageStream {
             imageStream.delegate = self
         }
-        
-        self.view.addSubview(self.newStreamView)
-        self.newStreamView.frame = CGRectMake(0, 0, screenSize.width, screenSize.height)
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
     }
     
     @IBAction func disconnectButton(sender: AnyObject) {
@@ -42,8 +50,7 @@ extension ViewStreamViewController: ImageStreamDataDelegate {
     
     func imageDataRecieved(image: NSData) {
         let image: UIImage = UIImage(data: image)!
-        //self.streamView.image = image
-        self.newStreamView.image = image
+        self.viewStream.image = image
     }
     
 }
