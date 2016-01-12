@@ -26,7 +26,7 @@ class ImageStream: NSObject {
     var inp: NSInputStream?
     var out: NSOutputStream?
     
-    let bufferSize : UInt32 = 1000000
+    let bufferSize : UInt32 = 2000000
     let readSize : UInt32 = 4096
     
     func streamConnect() {

@@ -23,7 +23,8 @@ class ViewController: UIViewController {
         imageStream.streamConnect()
         
     }
-
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         guard let viewStreamViewController = segue.destinationViewController as? ViewStreamViewController else { return }

@@ -56,18 +56,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33X-09-u95">
-                                <rect key="frame" x="0.0" y="20" width="568" height="280"/>
+                                <rect key="frame" x="40" y="28" width="488" height="272"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBj-qH-Qbu">
-                                <rect key="frame" x="20" y="28" width="61" height="26"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                <state key="normal" title="Disconnect">
-                                    <color key="titleColor" red="0.71733431209999998" green="0.1349622483" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="disconnectButton:" destination="Xq4-hT-kld" eventType="touchUpInside" id="ATQ-vp-2tL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-lN-2zm">
                                 <rect key="frame" x="488" y="240" width="60" height="60"/>
                                 <constraints>
@@ -80,15 +70,25 @@
                                     <action selector="snapButton:" destination="Xq4-hT-kld" eventType="touchUpInside" id="pVP-ib-V9A"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBj-qH-Qbu">
+                                <rect key="frame" x="20" y="28" width="61" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <state key="normal" title="Disconnect">
+                                    <color key="titleColor" red="0.71733431209999998" green="0.1349622483" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="disconnectButton:" destination="Xq4-hT-kld" eventType="touchUpInside" id="ATQ-vp-2tL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="33X-09-u95" secondAttribute="trailing" constant="20" id="2ZK-Sb-fLR"/>
                             <constraint firstItem="BBj-qH-Qbu" firstAttribute="leading" secondItem="2YE-MM-Hxt" secondAttribute="leadingMargin" id="3M3-1P-GQs"/>
+                            <constraint firstItem="33X-09-u95" firstAttribute="top" secondItem="N9u-cc-nrP" secondAttribute="bottom" constant="8" id="9he-D1-xm8"/>
                             <constraint firstItem="BBj-qH-Qbu" firstAttribute="top" secondItem="N9u-cc-nrP" secondAttribute="bottom" constant="8" id="GQw-yb-WX8"/>
-                            <constraint firstItem="uuG-UC-Hri" firstAttribute="top" secondItem="33X-09-u95" secondAttribute="bottom" constant="20" id="PjU-TU-TvN"/>
-                            <constraint firstItem="33X-09-u95" firstAttribute="leading" secondItem="2YE-MM-Hxt" secondAttribute="leadingMargin" constant="-20" id="Uqq-jL-AZX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="33X-09-u95" secondAttribute="trailing" constant="-20" id="WuB-iJ-u11"/>
-                            <constraint firstItem="33X-09-u95" firstAttribute="top" secondItem="N9u-cc-nrP" secondAttribute="bottom" id="its-ed-CEH"/>
+                            <constraint firstItem="uuG-UC-Hri" firstAttribute="top" secondItem="33X-09-u95" secondAttribute="bottom" constant="20" id="Yl8-7c-FaK"/>
+                            <constraint firstItem="33X-09-u95" firstAttribute="leading" secondItem="2YE-MM-Hxt" secondAttribute="leadingMargin" constant="20" id="Yy7-Dy-uEm"/>
                             <constraint firstItem="uuG-UC-Hri" firstAttribute="top" secondItem="DvE-lN-2zm" secondAttribute="bottom" constant="20" id="mZa-xy-9Dr"/>
                             <constraint firstItem="DvE-lN-2zm" firstAttribute="trailing" secondItem="2YE-MM-Hxt" secondAttribute="trailingMargin" id="pK3-mh-bzi"/>
                         </constraints>

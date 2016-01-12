@@ -16,9 +16,6 @@ class ViewStreamViewController: UIViewController {
     
     @IBOutlet weak var viewStream: UIImageView!
     
-//    var newStreamView = UIImageView()
-//    var screenSize: CGRect = UIScreen.mainScreen().bounds
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
