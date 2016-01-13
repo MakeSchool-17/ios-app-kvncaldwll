@@ -18,12 +18,12 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func startStream(sender: UIButton) {
         imageStream.streamConnect()
         
     }
     
+    @IBOutlet weak var connectErrorLabel: UILabel!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

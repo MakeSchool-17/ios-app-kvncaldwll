@@ -33,6 +33,7 @@ class ViewStreamViewController: UIViewController {
     }
     
     @IBAction func disconnectButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     

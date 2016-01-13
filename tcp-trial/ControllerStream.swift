@@ -38,8 +38,7 @@ extension ControllerStream : NSStreamDelegate {
                 
                 if let imageStream = aStream as? NSOutputStream {
                 
-                    let data: NSData = self.accelMotion.retrieveGyroscopeValues()
-                    out!.write(<#T##buffer: UnsafePointer<UInt8>##UnsafePointer<UInt8>#>, maxLength: <#T##Int#>)
+                    
                 }
                 
                 break

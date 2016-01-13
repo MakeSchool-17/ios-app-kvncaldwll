@@ -32,14 +32,14 @@ class MotionControls: NSObject {
 
 extension MotionControls: MotionKitDelegate {
     
-    func retrieveGyroscopeValues(x: Double, y:Double, z:Double, absoluteValue: Double) {
+    func retrieveGyroscopeValues(x: Double, y: Double, z: Double, absoluteValue: Double) {
         print("gyro x: \(x)")
         print("gyro y: \(y)")
         print("gyro z: \(z)")
         print("gyro absolute value: \(absoluteValue)")
     }
     
-    func getRotationRateFromDeviceMotion(x: Double, y:Double, z:Double) {
+    func getRotationRateFromDeviceMotion(x: Double, y: Double, z: Double) {
         print("rotation rate x: \(x)")
         print("rotation rate y: \(y)")
         print("rotation rate z: \(z)")

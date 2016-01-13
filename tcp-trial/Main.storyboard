@@ -31,17 +31,29 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R38-U0-GTG">
+                                <rect key="frame" x="110.5" y="495" width="100.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="R38-U0-GTG" firstAttribute="top" secondItem="pmr-Dl-HUr" secondAttribute="bottom" constant="475" id="FK6-PC-XnU"/>
                             <constraint firstItem="paw-iM-nVZ" firstAttribute="centerY" secondItem="Lot-dO-E3R" secondAttribute="centerY" id="HDE-p0-tcF"/>
                             <constraint firstItem="paw-iM-nVZ" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="I1G-Zt-GQn"/>
+                            <constraint firstItem="R38-U0-GTG" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="oIv-Yg-H3j"/>
+                            <constraint firstItem="81p-1G-U0D" firstAttribute="top" secondItem="R38-U0-GTG" secondAttribute="bottom" constant="50" id="wtU-2r-kgG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectErrorLabel" destination="R38-U0-GTG" id="rGF-am-yni"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9P-Qg-KdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352" y="463.86666666666667"/>
+            <point key="canvasLocation" x="352" y="463"/>
         </scene>
         <!--View Stream View Controller-->
         <scene sceneID="uBi-rW-3i3">
@@ -100,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWB-BI-muC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839" y="405"/>
+            <point key="canvasLocation" x="1004" y="542"/>
         </scene>
     </scenes>
     <resources>
