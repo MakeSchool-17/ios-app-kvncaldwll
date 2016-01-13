@@ -50,6 +50,11 @@ class ImageStream: NSObject {
         }
 
     }
+    
+    func streamDisconnect() {
+        self.inp?.close()
+        self.out?.close()
+    }
 
 }
 

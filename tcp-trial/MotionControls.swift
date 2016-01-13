@@ -37,6 +37,7 @@ extension MotionControls: MotionKitDelegate {
         print("gyro y: \(y)")
         print("gyro z: \(z)")
         print("gyro absolute value: \(absoluteValue)")
+        
     }
     
     func getRotationRateFromDeviceMotion(x: Double, y: Double, z: Double) {

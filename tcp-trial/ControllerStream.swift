@@ -22,7 +22,6 @@ class ControllerStream: NSObject {
     
 }
 
-
 extension ControllerStream : NSStreamDelegate {
 
     internal func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
@@ -38,6 +37,9 @@ extension ControllerStream : NSStreamDelegate {
                 
                 if let imageStream = aStream as? NSOutputStream {
                 
+                    let string: String = "[ hello world ]"
+                    let data = string.dataUsingEncoding(NSUTF8StringEncoding)
+                    out!.write(UnsafePointer<UInt8>(data!.bytes), maxLength: data!.length)
                     
                 }
                 

@@ -33,6 +33,8 @@ class ViewStreamViewController: UIViewController {
     }
     
     @IBAction func disconnectButton(sender: AnyObject) {
+        imageStream!.streamDisconnect()
+        NSLog("Stream closed")
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
