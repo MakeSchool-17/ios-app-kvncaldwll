@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,17 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viewtiful" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WJ-qw-CTh">
-                                <rect key="frame" x="267" y="290" width="66" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rings" translatesAutoresizingMaskIntoConstraints="NO" id="Xq4-4v-RQQ">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 1" translatesAutoresizingMaskIntoConstraints="NO" id="PSH-0T-DLb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7WJ-qw-CTh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1Nx-kh-PBy"/>
-                            <constraint firstItem="7WJ-qw-CTh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dkZ-Mm-g8o"/>
+                            <constraint firstItem="Xq4-4v-RQQ" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.25" id="4fq-nC-4AU"/>
+                            <constraint firstItem="PSH-0T-DLb" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="9ie-gU-tWL"/>
+                            <constraint firstItem="PSH-0T-DLb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m0h-05-l4R"/>
+                            <constraint firstItem="PSH-0T-DLb" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="qxF-Kd-sbg"/>
+                            <constraint firstItem="Xq4-4v-RQQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tjX-g3-iHx"/>
+                            <constraint firstItem="PSH-0T-DLb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tzU-6w-iLe"/>
+                            <constraint firstItem="Xq4-4v-RQQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wrL-ri-wXJ"/>
+                            <constraint firstItem="Xq4-4v-RQQ" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.25" id="z6v-TX-TSl"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,4 +43,8 @@
             <point key="canvasLocation" x="264" y="249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Rectangle 1" width="1080" height="1920"/>
+        <image name="rings" width="752" height="752"/>
+    </resources>
 </document>

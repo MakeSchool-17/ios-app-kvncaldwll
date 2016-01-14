@@ -31,8 +31,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="error messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R38-U0-GTG">
-                                <rect key="frame" x="110.5" y="495" width="100.5" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R38-U0-GTG">
+                                <rect key="frame" x="110.5" y="501" width="100.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,8 +40,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="R38-U0-GTG" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="6TN-eh-5tW"/>
                             <constraint firstItem="paw-iM-nVZ" firstAttribute="centerY" secondItem="Lot-dO-E3R" secondAttribute="centerY" id="HDE-p0-tcF"/>
                             <constraint firstItem="paw-iM-nVZ" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="I1G-Zt-GQn"/>
+                            <constraint firstItem="81p-1G-U0D" firstAttribute="top" secondItem="R38-U0-GTG" secondAttribute="bottom" constant="50" id="r4Q-31-FsS"/>
                         </constraints>
                     </view>
                     <connections>
