@@ -37,13 +37,13 @@ extension ControllerStream : NSStreamDelegate {
             case NSStreamEvent.HasSpaceAvailable:
                 print("Controller Space Available")
                 
-                if (!writtenToOutput) {
+//            if (!writtenToOutput) {
                     let string: String = "[ hello world ]"
                     let data = string.dataUsingEncoding(NSUTF8StringEncoding)
                     out!.write(UnsafePointer<UInt8>(data!.bytes), maxLength: data!.length)
                     writtenToOutput = true
-                }
-                
+//                }
+        
                 break
             
             case NSStreamEvent.ErrorOccurred:
