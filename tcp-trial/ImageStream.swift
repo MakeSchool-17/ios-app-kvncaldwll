@@ -42,6 +42,7 @@ class ImageStream: NSObject {
             self.controllerStream.out = self.out
             
             self.inp!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+            self.out!.scheduleInRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             
             self.inp!.open()
             self.out!.open()
@@ -65,7 +66,7 @@ extension ImageStream : NSStreamDelegate {
         switch (eventCode){
             
         case NSStreamEvent.OpenCompleted:
-            NSLog("Stream opened")
+            print("Stream opened")
             break
             
         case NSStreamEvent.HasBytesAvailable:
@@ -114,7 +115,7 @@ extension ImageStream : NSStreamDelegate {
                         }
                     })
                 }
-                
+
             break
             
         case NSStreamEvent.ErrorOccurred:

@@ -14,6 +14,7 @@ class ControllerStream: NSObject {
     
     var out: NSOutputStream?
     var accelMotion = MotionControls()
+    var writtenToOutput = false
     
     override init () {
         super.init()
@@ -29,33 +30,33 @@ extension ControllerStream : NSStreamDelegate {
         switch (eventCode){
             
             case NSStreamEvent.OpenCompleted:
-                NSLog("Controller Stream Opened")
+                print("Controller Stream Opened")
+                writtenToOutput = false
                 break
             
-            case NSStreamEvent.HasBytesAvailable:
-                NSLog("Controller Bytes Available")
+            case NSStreamEvent.HasSpaceAvailable:
+                print("Controller Space Available")
                 
-                if let imageStream = aStream as? NSOutputStream {
-                
+                if (!writtenToOutput) {
                     let string: String = "[ hello world ]"
                     let data = string.dataUsingEncoding(NSUTF8StringEncoding)
                     out!.write(UnsafePointer<UInt8>(data!.bytes), maxLength: data!.length)
-                    
+                    writtenToOutput = true
                 }
                 
                 break
             
             case NSStreamEvent.ErrorOccurred:
-                NSLog("Controller Error Occurred")
+                print("Controller Error Occurred")
                 print(aStream.streamError)
                 break
             
             case NSStreamEvent.EndEncountered:
-                NSLog("Controller End Encountered")
+                print("Controller End Encountered")
                 break
             
             default:
-                NSLog("Controller Error Unknown.")
+                print("Controller Error Unknown.")
             
         }
         
