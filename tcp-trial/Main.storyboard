@@ -3,7 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,32 +20,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="paw-iM-nVZ">
-                                <rect key="frame" x="131" y="269" width="59" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqA-ku-PZc">
-                                        <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
-                                        <state key="normal" title="Connect"/>
-                                        <connections>
-                                            <action selector="startStream:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="eEZ-Om-TSQ"/>
-                                            <segue destination="Xq4-hT-kld" kind="modal" identifier="ViewStream" id="2ej-I0-0kU"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R38-U0-GTG">
-                                <rect key="frame" x="110.5" y="501" width="100.5" height="17"/>
+                                <rect key="frame" x="110" y="501" width="100.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqA-ku-PZc">
+                                <rect key="frame" x="120" y="244" width="80" height="80"/>
+                                <state key="normal" image="Connect"/>
+                                <connections>
+                                    <action selector="startStream:" destination="fbT-RS-Pb0" eventType="touchUpInside" id="eEZ-Om-TSQ"/>
+                                    <segue destination="Xq4-hT-kld" kind="modal" identifier="ViewStream" id="2ej-I0-0kU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="hcX-jv-aln">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="R38-U0-GTG" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="6TN-eh-5tW"/>
-                            <constraint firstItem="paw-iM-nVZ" firstAttribute="centerY" secondItem="Lot-dO-E3R" secondAttribute="centerY" id="HDE-p0-tcF"/>
-                            <constraint firstItem="paw-iM-nVZ" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="I1G-Zt-GQn"/>
+                            <constraint firstItem="GqA-ku-PZc" firstAttribute="centerY" secondItem="Lot-dO-E3R" secondAttribute="centerY" id="9kd-Eb-Vjd"/>
+                            <constraint firstItem="hcX-jv-aln" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="Ges-Q5-1r4"/>
+                            <constraint firstItem="GqA-ku-PZc" firstAttribute="height" secondItem="Lot-dO-E3R" secondAttribute="width" multiplier="0.25" id="S4H-hP-7Bp"/>
+                            <constraint firstItem="hcX-jv-aln" firstAttribute="height" secondItem="Lot-dO-E3R" secondAttribute="height" id="l7B-It-fGb"/>
+                            <constraint firstItem="GqA-ku-PZc" firstAttribute="width" secondItem="Lot-dO-E3R" secondAttribute="width" multiplier="0.25" id="mZs-RD-96o"/>
+                            <constraint firstItem="GqA-ku-PZc" firstAttribute="centerX" secondItem="Lot-dO-E3R" secondAttribute="centerX" id="oJh-9m-kpu"/>
                             <constraint firstItem="81p-1G-U0D" firstAttribute="top" secondItem="R38-U0-GTG" secondAttribute="bottom" constant="50" id="r4Q-31-FsS"/>
+                            <constraint firstItem="hcX-jv-aln" firstAttribute="centerY" secondItem="Lot-dO-E3R" secondAttribute="centerY" id="tk1-Hu-JYg"/>
+                            <constraint firstItem="hcX-jv-aln" firstAttribute="width" secondItem="Lot-dO-E3R" secondAttribute="width" id="vM2-Ah-zbJ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -81,27 +87,31 @@
                                     <action selector="snapButton:" destination="Xq4-hT-kld" eventType="touchUpInside" id="pVP-ib-V9A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBj-qH-Qbu">
-                                <rect key="frame" x="20" y="28" width="61" height="26"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                <state key="normal" title="Disconnect">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBj-qH-Qbu">
+                                <rect key="frame" x="20" y="20" width="56" height="48"/>
+                                <state key="normal" image="Disconnect">
                                     <color key="titleColor" red="0.71733431209999998" green="0.1349622483" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="disconnectButton:" destination="Xq4-hT-kld" eventType="touchUpInside" id="ATQ-vp-2tL"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RectangleLong" translatesAutoresizingMaskIntoConstraints="NO" id="S99-UL-EUP">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="33X-09-u95" secondAttribute="trailing" constant="20" id="2ZK-Sb-fLR"/>
-                            <constraint firstItem="BBj-qH-Qbu" firstAttribute="leading" secondItem="2YE-MM-Hxt" secondAttribute="leadingMargin" id="3M3-1P-GQs"/>
                             <constraint firstItem="33X-09-u95" firstAttribute="top" secondItem="N9u-cc-nrP" secondAttribute="bottom" constant="8" id="9he-D1-xm8"/>
-                            <constraint firstItem="BBj-qH-Qbu" firstAttribute="top" secondItem="N9u-cc-nrP" secondAttribute="bottom" constant="8" id="GQw-yb-WX8"/>
+                            <constraint firstItem="S99-UL-EUP" firstAttribute="width" secondItem="2YE-MM-Hxt" secondAttribute="width" id="Wdj-4F-ZF8"/>
+                            <constraint firstItem="S99-UL-EUP" firstAttribute="centerY" secondItem="2YE-MM-Hxt" secondAttribute="centerY" id="Xhx-Et-AMl"/>
                             <constraint firstItem="uuG-UC-Hri" firstAttribute="top" secondItem="33X-09-u95" secondAttribute="bottom" constant="20" id="Yl8-7c-FaK"/>
                             <constraint firstItem="33X-09-u95" firstAttribute="leading" secondItem="2YE-MM-Hxt" secondAttribute="leadingMargin" constant="20" id="Yy7-Dy-uEm"/>
+                            <constraint firstItem="S99-UL-EUP" firstAttribute="centerX" secondItem="33X-09-u95" secondAttribute="centerX" id="bQ9-iv-uGP"/>
                             <constraint firstItem="uuG-UC-Hri" firstAttribute="top" secondItem="DvE-lN-2zm" secondAttribute="bottom" constant="20" id="mZa-xy-9Dr"/>
                             <constraint firstItem="DvE-lN-2zm" firstAttribute="trailing" secondItem="2YE-MM-Hxt" secondAttribute="trailingMargin" id="pK3-mh-bzi"/>
+                            <constraint firstItem="S99-UL-EUP" firstAttribute="height" secondItem="2YE-MM-Hxt" secondAttribute="height" id="uwX-hl-SQ2"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -115,6 +125,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Connect" width="538" height="538"/>
+        <image name="Disconnect" width="627" height="538"/>
+        <image name="Rectangle" width="1242" height="2208"/>
+        <image name="RectangleLong" width="2208" height="1242"/>
         <image name="icon-camera-128" width="128" height="128"/>
     </resources>
 </document>
