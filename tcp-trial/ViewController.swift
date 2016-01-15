@@ -15,11 +15,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        connectErrorLabel.hidden = true
         
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [UIInterfaceOrientationMask.Portrait]
     }
     
     @IBAction func startStream(sender: UIButton) {
         imageStream.streamConnect()
+        
+//        if(){
+//            connectErrorLabel.text =  "hello"
+//            connectErrorLabel.hidden = false
+//        }
         
     }
     

@@ -11,8 +11,7 @@ import UIKit
 
 class ViewStreamViewController: UIViewController {
     
-    var imageStream: ImageStream?
-    
+    var imageStream: ImageStream?    
     
     @IBOutlet weak var viewStream: UIImageView!
     
