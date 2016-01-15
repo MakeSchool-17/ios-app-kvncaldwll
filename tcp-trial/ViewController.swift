@@ -30,8 +30,11 @@ class ViewController: UIViewController {
     @IBAction func startStream(sender: UIButton) {
         imageStream.streamConnect()
         
-//        if(){
-//            connectErrorLabel.text =  "hello"
+//        do {
+//            try imageStream.streamConnect()
+//            
+//        } catch {
+//            connectErrorLabel.text =  imageStream.
 //            connectErrorLabel.hidden = false
 //        }
         
